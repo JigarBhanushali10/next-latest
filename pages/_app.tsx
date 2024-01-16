@@ -1,7 +1,7 @@
 import Header from "../components/layout/Header";
 import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps } :any) {
   return (
     <>
       <Header />

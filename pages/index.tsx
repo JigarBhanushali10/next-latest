@@ -4,7 +4,7 @@ function Home() {
   const [featuredEvents, setFeaturedEvents] = useState()
 
 
-  const deleteEvent = (id) => {
+  const deleteEvent = (id:string) => {
     let text = "Click on Yes to delete Event";
     if (confirm(text) == true) {
       fetch(`/api/events/${id}`, {
@@ -28,7 +28,7 @@ function Home() {
       method: 'GET',
       headers: {
         'isFeatured': true,
-      },
+      } as any,
     }).then((res) => {
       return res.json()
     }).then((res) => {

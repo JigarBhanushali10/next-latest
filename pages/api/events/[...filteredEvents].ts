@@ -10,8 +10,8 @@ export default async function handler(
 ) {
   await runMiddleware(req, res, cors);
   const { filteredEvents } = req.query;
-  const year = filteredEvents[0] as unknown as number;
-  const month = filteredEvents[1] as unknown as number;
+  const year = filteredEvents?.[0] as unknown as number;
+  const month = filteredEvents?.[1] as unknown as number;
   const filterEvents = events.filter((event) => {
     const eventDate = new Date(event.date);
     return eventDate.getFullYear() == year && eventDate.getMonth() == month - 1;
