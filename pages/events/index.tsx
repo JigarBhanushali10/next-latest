@@ -1,15 +1,14 @@
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import EventList from "../../components/events/EventList";
 import EventsSearch from "../../components/events/events-search/EventsSearch";
-import { API_BASE_URL } from "../../utils/config";
 
 function EventDetail() {
   const router = useRouter();
 
   const [allEvents, setAllEvents] = useState()
 
-  const deleteEvent = (id) => {
+  const deleteEvent = (id:string) => {
 
     let text = "Click on Yes to delete Event";
     if (confirm(text) == true) {
@@ -41,7 +40,7 @@ function EventDetail() {
     getAllEvents()
   }, [])
 
-  function onSearch({ month, year }) {
+  function onSearch({ month, year } : any) {
     router.push(`/events/${year}/${month}`);
   }
 

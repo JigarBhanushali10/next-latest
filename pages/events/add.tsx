@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styles from '../../styles/form.module.css';
 
+import router from 'next/router';
 import Button from "../../components/ui/Button";
-import { API_BASE_URL } from '../../utils/config';
 
 function Add() {
   const [formData, setFormData] = useState({
@@ -14,7 +14,7 @@ function Add() {
     isFeatured: false,
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e:any) => {
     const { name, value, type, checked } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -22,7 +22,7 @@ function Add() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e:any) => {
     e.preventDefault();
     // Add your logic to submit the form data (e.g., send it to an API)
     console.log('Form Data:', formData);
@@ -68,7 +68,7 @@ function Add() {
           </label>
         </div>
         <div className={styles.field}>
-          <Button>Submit</Button>
+          <Button  link={undefined} onClick={undefined}>Submit</Button>
         </div>
       </form>
     </div>
